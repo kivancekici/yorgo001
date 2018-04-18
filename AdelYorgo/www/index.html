@@ -29,20 +29,51 @@
 
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
-
+    <link rel="stylesheet" href="lib/framework7/css/framework7.icons.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body class="color-theme-blue">
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Left panel content goes here</p>
+    <div class="panel panel-left bg-white panel-cover">
+        <div  class="list-block bg-white">
+
+            <div class="panelcenter">
+                <img src="images/navbarlogo.png" width="130">
+            </div>
+
+            <a id="btnOrder" href="#" class="item-link">
+                <div class="item-content">
+                    <div class="item-media itemLogo"><i class="f7-icons">data-fill</i></div>
+                    <div class="item-inner">
+                        <div class="item-title" id="orderItem">Masalar</div>
+                    </div>
+                </div>
+            </a>
+            <a id="btnLogout" href="#" class="item-link">
+                <div class="item-content">
+                    <div class="item-media itemLogo"><i class="f7-icons">logout</i></div>
+                    <div class="item-inner">
+                        <div class="item-title" id="logoutItem">Çıkış</div>
+                    </div>
+                </div>
+            </a>
+            
+            <a id="btnLogin" href="#" class="item-link">
+                <div class="item-content">
+                    <div class="item-media itemLogo"><i class="f7-icons">login</i></div>
+                    <div class="item-inner">
+                        <div class="item-title" id="loginItem">Giriş</div>
+                    </div>
+                </div>
+            </a>
+
         </div>
     </div>
 
@@ -50,40 +81,21 @@
     <div class="views">
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
+           
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
+            <div class="pages">
                 <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
+                <div data-page="index" class="page no-navbar">
                     <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+                    <div class="page-content page-bg-splash">
+                        <div class="content-block cntbottom">
+                            <div style="margin-bottom: 13px;" class="row">
+                                <div class="col-33"></div>
+                            <!-- <div class="col-33 splashindicator"><span style="width:36px; height:36px" class="preloader"></span></div> -->
+                                <div class="col-33"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
                 </div>
             </div>
         </div>
@@ -91,7 +103,9 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/wsutil.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+
 </body>
 
 </html>

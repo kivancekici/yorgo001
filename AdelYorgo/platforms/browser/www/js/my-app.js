@@ -1,5 +1,23 @@
+Template7.registerHelper('placeholder', function (plchldrContent) {
+    var ret = 'placeholder="' + plchldrContent + '"';
+    return ret;
+});
+
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    swipeBackPage: false,
+    swipePanelOnlyClose: true,
+    template7Pages: true,
+    pushState: true,
+    smartSelectBackText: 'Tamam',
+
+    onAjaxStart: function (xhr) {
+        myApp.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        myApp.hideIndicator();
+    }
+});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -12,8 +30,52 @@ var mainView = myApp.addView('.view-main', {
 });
 
 // Handle Cordova Device Ready Event
-$$(document).on('deviceready', function() {
+$$(document).on('deviceready', function () {
     console.log("Device is ready!");
+});
+
+
+function onOffline() {
+    myApp.alert('İnternet bağlantısı yok.', function () {
+        navigator.app.exitApp();
+    });
+}
+
+
+function loadPage(pageName) {
+    var pgUrl = pageName + '.html';
+    mainView.router.load({
+        url: pgUrl,
+    });
+
+}
+
+setTimeout(function() {
+
+    checkLoginStatus();
+
+}, 1000);
+
+
+function checkLoginStatus() {
+
+    var userLoggedIn = window.localStorage.getItem("isLogin");
+
+    try {
+        if (userLoggedIn == "1") {
+            loadPage('main');
+
+        } else {
+            loadPage('login');
+        }
+    } catch (e) {
+        myApp.alert(e);
+    }
+
+}
+
+$$(document).on('offline', function() {
+    onOffline();
 });
 
 
@@ -29,6 +91,24 @@ myApp.onPageInit('about', function (page) {
 $$(document).on('pageInit', function (e) {
     // Get page data from event data
     var page = e.detail.page;
+
+    if (page.name === 'login') {
+        $$('.btnLogin').on('click', function() {
+            var pass = $$('#txtPassword').val();
+            var response = login(pass);
+
+            if (response != 'NOK') {
+                window.localStorage.setItem("garson", response);
+                window.localStorage.setItem("isLogin", "1");
+                checkLoginStatus();
+            } else {
+                window.localStorage.setItem("isLogin", "0");
+
+            }
+
+        });
+
+    }
 
     if (page.name === 'about') {
         // Following code will be executed for page with data-page attribute equal to "about"

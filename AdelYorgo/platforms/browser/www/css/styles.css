@@ -13,3 +13,132 @@
 .statusbar-overlay {
     background: #000000;
 }
+
+.page-bg-main {
+    background-image: url("../images/adelsoftlogo.jpeg");
+    background-size: contain;
+    background-position: fixed !important;
+}
+
+.cntbottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.cntmiddle {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+}
+
+.panelmenulist.li {
+    width: 100%;
+}
+
+.account-card-header {
+    background-image: url("../images/myaccount.png");
+    height: 30vw;
+    background-size: cover;
+    background-position: center;
+}
+
+.txt-cart-order-amount {
+    width: 39px!important;
+    border: 1px solid #788F00 !important;
+    height: 29px!important;
+    text-align: center;
+}
+
+.list-item-shopping-cart {
+    padding: 1em;
+}
+
+
+.item-text-shopping-cart {
+    height: 80px!important;
+}
+
+.list-item-manufacturer-details {
+    font-family: "Open Sans Condensed", "Helvetica", "Arial", "sans-serif";
+}
+
+/*Askin Başla*/
+
+.list-item-addresses {
+    font-family: "Open Sans Condensed", "Helvetica", "Arial", "sans-serif";
+}
+
+.splashindicator {
+    text-align: center;
+    padding: 5px;
+}
+
+.page-bg-splash {
+    background-image: url("../images/adelsoftlogo.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+select:required:invalid {
+    color: gray;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
+.panelcenter {
+    text-align: center !important;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    -webkit-align-items: center !important;
+    align-items: center !important;
+}
+
+.itemLogo {
+    min-width: 2em !important;
+    text-align: center !important;
+}
+
+.bgYesil{
+ background-color: #E6EE9C;
+}
+
+.tabbar a.active {
+  color:#788F00 !important;
+  background-color: #ffffff !important;
+}
+
+.tabbar a.active i {
+  color:#788F00 !important;
+}
+
+.toolbar-inner {    
+padding: 0px !important;
+}
+
+#mainContentBlock {
+margin-bottom: 10px !important;
+}
+
+.tabs-swipeable-wrap > .tabs > .tab  {
+     overflow: auto;
+     -webkit-overflow-scrolling: touch;
+}    
+
+/*Askin Bitir*/
+
+.product-card-header-pic .card-header {
+    height: 50vw;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-description{
+    font-stretch: expanded;
+}

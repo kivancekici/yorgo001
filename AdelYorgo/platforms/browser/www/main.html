@@ -1,0 +1,100 @@
+<div data-page="main" class="page navbar-fixed no-toolbar tabbar-labels-fixed">
+    <div class="navbar bg-baklava7 color-white border-baklava7">
+        <div class="navbar-inner">
+            <div class="center sliding">
+                <img src="images/navbarlogo2.png" width="70">
+            </div>
+            <div class="right">
+                <a href="#" class="link icon-only open-panel"><i class="color-white f7-icons">bars</i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <a href="#" style="width: 70px !important; height: 70px !important" class="floating-button bg-baklava7">
+        <i class="fa fa-shopping-cart fa-2x"></i>
+    </a>
+    <!-- Scrollable page content -->
+    <div class="page-bg-main page-content">
+
+        <div id="mainContentBlock" class="content-block">
+            <div class="card bg-baklava7 color-white">
+                <div class="card-header" style="text-align:center !important;">Masalar</div>
+                <div class="card-content">
+                    <div class="card-content-inner">
+                        <form class="searchbar searchbar-init bgYesil color-white" data-search-list=".lstproduct">
+                            <div class="searchbar-input">
+                                <input type="search" {{placeholder searchPlc}}>
+                                <!-- <a href="#" class="searchbar-clear"></a> -->
+                            </div>
+                            <a href="#" class="searchbar-cancel color-white">{{cancelBtn}}</a>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link smart-select" data-open-in="page">
+
+                                    <select id="Categori" name="CategoriSelector" multiple maxlength="2">
+                                  
+                                    </select>
+
+                                    <div class="item-content" style="padding-left:0px !important;">
+                                        <div class="item-media itemLogo color-white"><i class="f7-icons">filter</i></div>
+
+                                        <div style="max-width:100% !important; color:white !important;" class="item-after"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="toolbar tabbar tabbar-labels bg-baklava7 color-white border-baklava7">
+            <div class="toolbar-inner">
+                <a href="#tab-1" class="tab-link active">
+                    <i class="color-white f7-icons">list</i>
+                    <span class="tabbar-label">{{catalogue}}</span>
+                </a>
+                <a href="#tab-2" class="tab-link">
+                    <i class="color-white f7-icons">sort</i>
+                    <span class="tabbar-label">{{allmanufacturers}}</span>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="tabs-swipeable-wrap">
+            <div class="tabs">
+                <div id="tab-1" class="tab bg-white active">
+                    <div class="content-block searchbar-not-found">
+                        <div style="padding-top:60px;">{{nothingFound}}</div>
+
+                    </div>
+                    <div style="padding-top:20px !important;" class="lstproduct list-block media-list virtual-list list-block-search searchbar-found theme-baklava7">
+                        <!-- keep it empty -->
+                    </div>
+
+                </div>
+                <div id="tab-2" class="tab bg-white">
+                    <div class="content-block searchbar-not-found">
+                        <div style="padding-top:60px;">{{nothingFound}}</div>
+
+                    </div>
+                    <div style="padding-top:20px !important;" class="lstmanufacturers list-block media-list virtual-list list-block-search searchbar-found theme-baklava7">
+                        <!-- keep it empty -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

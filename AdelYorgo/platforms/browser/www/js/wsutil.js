@@ -1,4 +1,4 @@
-var servicePath = "http://localhost:1999/Service.svc/";
+var servicePath = "http://localhost:27865/RestServiceImpl.svc/";
 
 function restfulGetCall(met) {
     var response;
@@ -47,5 +47,5 @@ function restfulPostCall(met,sendData) {
 
 function login(parola){
     var met="login/"+encodeURIComponent(parola);
-    return restfulGetCall(met);
+    return restfulGetCall(met).loginResult;
 }
